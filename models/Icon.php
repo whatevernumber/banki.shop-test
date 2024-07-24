@@ -75,8 +75,8 @@ class Icon extends \yii\db\ActiveRecord
         // removes not allowed characters and extra whitespaces
         $baseName = preg_replace('/(?<=\s)\s+|[^-\w\s]/u', '', $baseName);
 
-        $newName = StringHelper::str_translit($baseName);
-        $name = strtolower($this->getUniqueName($newName, $ext, self::PATH));
+        $newName = strtolower(StringHelper::str_translit($baseName));
+        $name = $this->getUniqueName($newName, $ext, self::PATH);
 
         $this->original_name = $this->icon->name;
         $this->store($this->icon, self::PATH, $name);
