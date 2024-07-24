@@ -54,6 +54,7 @@ $config = [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'parameter',
                     'patterns' => [
+                        'GET' => 'index',
                         'GET type/<type:[1-2]>' => 'index',
                         'POST icon/<paramId:\d+>' => 'save-icons',
                         'DELETE icon/delete/<iconId:\d+>' => 'delete-icon',
@@ -62,9 +63,9 @@ $config = [
                     'ruleConfig' => [
                         'class' => 'yii\web\UrlRule',
                         'defaults' => [
-                            'search_id' => 0,
+                            'searchId' => 0,
                             'title' => '',
-                            'type_id' => 0,
+                            'type' => 0,
                         ]
                     ],
                 ],
